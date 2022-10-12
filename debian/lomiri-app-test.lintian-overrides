@@ -1,0 +1,5 @@
+# on the todo list upstream: https://gitlab.com/ubports/core/lomiri-app-launch/-/issues/1
+lomiri-app-test: binary-without-manpage usr/bin/lomiri-app-test
+
+# todo, dependency needs to added properly...
+lomiri-app-test: desktop-command-not-in-package usr/share/applications/lomiri-app-test.desktop qmlscene

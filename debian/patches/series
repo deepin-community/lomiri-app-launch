@@ -1,0 +1,7 @@
+2001_fix-path-to-sh.patch
+2002_disable-non-thread-safe-tests.patch
+1001_fix-gir-api-version.patch
+1002_typo-fixes.patch
+1003_add-missing-keywords-key.patch
+2003_remove-werror.patch
+0004_Fix-compile-error-with-new-glib-versions.patch

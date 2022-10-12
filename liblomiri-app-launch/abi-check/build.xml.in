@@ -1,0 +1,9 @@
+<version>
+@ABI_VERSION@
+</version>
+<headers>
+@HEADER_AS_LIST@
+</headers>
+<libs>
+@CMAKE_BINARY_DIR@/liblomiri-app-launch/liblomiri-app-launch.so.@ABI_VERSION@
+</libs>

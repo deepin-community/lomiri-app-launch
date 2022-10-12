@@ -1,0 +1,88 @@
+Description: Typo fixes in g_debug messages.
+Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Forwarded: https://gitlab.com/ubports/core/lomiri-app-launch/-/merge_requests/12/
+
+--- a/liblomiri-app-launch/jobs-base.cpp
++++ b/liblomiri-app-launch/jobs-base.cpp
+@@ -782,7 +782,7 @@
+     }
+     else
+     {
+-        g_debug("Emmitted 'LomiriFocusRequest' to DBus");
++        g_debug("Emitted 'LomiriFocusRequest' to DBus");
+     }
+ }
+ 
+@@ -867,7 +867,7 @@
+     }
+     else
+     {
+-        g_debug("Emmitted '%s' to DBus", signal.c_str());
++        g_debug("Emitted '%s' to DBus", signal.c_str());
+     }
+ }
+ 
+@@ -1022,7 +1022,7 @@
+     std::string pidstr = std::to_string(pid);
+     std::array<const char*, 4> args = {OOM_HELPER, pidstr.c_str(), oomstr.c_str(), nullptr};
+ 
+-    g_debug("Excuting OOM Helper (pid: %d, score: %d): %s", int(pid), int(oomvalue),
++    g_debug("Executing OOM Helper (pid: %d, score: %d): %s", int(pid), int(oomvalue),
+             std::accumulate(args.begin(), args.end(), std::string{}, [](const std::string& instr,
+                                                                         const char* output) -> std::string {
+                 if (instr.empty())
+--- a/liblomiri-app-launch/app-store-snap.cpp
++++ b/liblomiri-app-launch/app-store-snap.cpp
+@@ -130,7 +130,7 @@
+ 
+     if (!pkgInfo)
+     {
+-        throw std::runtime_error("Packge '" + package.value() + "' doesn't have valid info.");
++        throw std::runtime_error("Package '" + package.value() + "' doesn't have valid info.");
+     }
+ 
+     if (pkgInfo->appnames.empty())
+--- a/liblomiri-app-launch/application-impl-legacy.cpp
++++ b/liblomiri-app-launch/application-impl-legacy.cpp
+@@ -102,7 +102,7 @@
+ 
+         if (error != nullptr)
+         {
+-            g_debug("Unable to load keyfile '%s' becuase: %s", desktopName.c_str(), error->message);
++            g_debug("Unable to load keyfile '%s' because: %s", desktopName.c_str(), error->message);
+             g_error_free(error);
+             return {};
+         }
+--- a/liblomiri-app-launch/application-impl-libertine.h
++++ b/liblomiri-app-launch/application-impl-libertine.h
+@@ -31,7 +31,7 @@
+ namespace app_impls
+ {
+ 
+-/** Application Implmentation for the Libertine container system. Libertine
++/** Application Implementation for the Libertine container system. Libertine
+     sets up containers that are read/write on a read only system, to all for
+     more dynamic packaging systems (like deb) to work. This provides some
+     compatibility for older applications or those who are only distributed in
+--- a/liblomiri-app-launch/registry-impl.h
++++ b/liblomiri-app-launch/registry-impl.h
+@@ -118,7 +118,7 @@
+     {
+         if (G_UNLIKELY(!jobs_))
+         {
+-            throw std::runtime_error{"Registry Implmentation has no Jobs object"};
++            throw std::runtime_error{"Registry Implementation has no Jobs object"};
+         }
+         return jobs_;
+     }
+--- a/liblomiri-app-launch/application-icon-finder.cpp
++++ b/liblomiri-app-launch/application-icon-finder.cpp
+@@ -263,7 +263,7 @@
+ 
+     if (error != nullptr)
+     {
+-        g_debug("Unable to open directory '%s' becuase: %s", themeDir.c_str(), error->message);
++        g_debug("Unable to open directory '%s' because: %s", themeDir.c_str(), error->message);
+         g_error_free(error);
+         return searchPaths;
+     }

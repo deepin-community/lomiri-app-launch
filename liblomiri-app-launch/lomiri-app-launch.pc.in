@@ -1,0 +1,11 @@
+libdir=@libdir@
+includedir=@includedir@
+
+Cflags: -I${includedir}/liblomiri-app-launch-@apiversion@
+Requires: glib-2.0 mirclient
+Libs: -L${libdir} -llomiri-app-launch
+
+Name: liblomiri-app-launch
+Description: A library to manage and watch applications under session init
+Version: @VERSION@
+

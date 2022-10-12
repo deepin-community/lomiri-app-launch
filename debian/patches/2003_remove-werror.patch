@@ -1,0 +1,16 @@
+Description:  Remove -Werror, it breaks the build with gcc-11
+Author: Peter Michael Green <plugwash@raspbian.org>
+Bug-Debian: https://bugs.debian.org/984224
+Forwarded: <not-needed>, in a follow-up version of lomiri-app-launch we will be able to disable -Werror via a configure option
+
+--- lomiri-app-launch-0.0.90.orig/CMakeLists.txt
++++ lomiri-app-launch-0.0.90/CMakeLists.txt
+@@ -51,7 +51,7 @@ set(lomiri_app_launch_arch "${LOMIRI_APP
+ 
+ add_compile_options(
+ # Because we believe in quality
+-	-Wall -Werror
++	-Wall
+ 	-g
+ 	-pthread
+ )

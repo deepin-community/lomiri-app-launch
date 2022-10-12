@@ -1,0 +1,14 @@
+# on the todo list upstream: https://gitlab.com/ubports/core/lomiri-app-launch/-/issues/1
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-info
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-launch
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-launch-appids
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-list
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-list-pids
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-pid
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-stop
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-triplet
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-usage
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-app-watch
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-helper-list
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-helper-start
+lomiri-app-launch-tools: no-manual-page usr/bin/lomiri-helper-stop

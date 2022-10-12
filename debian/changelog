@@ -1,0 +1,93 @@
+lomiri-app-launch (0.0.90-10) unstable; urgency=medium
+
+  * debian/rules:
+    + Comment out DPKG_GENSYMBOLS_CHECK_LEVEL=4. Let's use level 1 (default)
+      and receive less build failures.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sat, 13 Nov 2021 14:45:57 +0100
+
+lomiri-app-launch (0.0.90-9) unstable; urgency=medium
+
+  [ Peter Michael Green ]
+  * debian/liblomiri-app-launch0.symbols:
+    + Mark a couple of symbols that disappeard with gcc-11 as optional=inline.
+  * debian/patches:
+    + Add 1004_move-system-headers-outside-extern-c.patch. Adjust includes to
+      avoid including glib.h inside extern C as this causes build failures.
+    + Add 2003_remove-werror.patch. Remove -Werror, it breaks the build with
+      gcc-11 (Closes: 984224).
+
+  [ Mike Gabriel ]
+  * debian/control:
+    + Bump Standards-Version: to 4.6.0. No changes needed.
+  * debian/patches:
+    + Replace 1004_move-system-headers-outside-extern-c.patch by the official
+      upstream patch 0004_Fix-compile-error-with-new-glib-versions.patch.
+    + Assure that all patch files have a Forwarded: field.
+  * debian/lomiri-app-launch-tools.lintian-overrides:
+    + Rename outdated lintian tag 'binary-without-manpage' to 'no-manual-page'.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Fri, 12 Nov 2021 11:01:12 +0100
+
+lomiri-app-launch (0.0.90-8) unstable; urgency=medium
+
+  * debian/control:
+    + Don't require a versioned B-D on libgtest-dev. (There have been some
+      revisions that were broken, but earlier googletest versions should work
+      in general).
+  * debian/liblomiri-app-launch0.symbols:
+    + Update .symbols file for architectures 'alpha' and 'hppa' (Closes:
+      #982942).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 24 May 2021 00:41:04 +0200
+
+lomiri-app-launch (0.0.90-7) unstable; urgency=medium
+
+  * debian/liblomiri-app-launch0.symbols:
+    + Update for mips64el architecture.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 21 Dec 2020 13:35:03 +0100
+
+lomiri-app-launch (0.0.90-6) unstable; urgency=medium
+
+  * debian/control:
+    + Update versioned B-D on cmake-extras (>= 1.5-7~).
+    + Make B-D on libgtest-dev versioned (>= 1.10.0.20201025-1~).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Sun, 13 Dec 2020 19:34:11 +0000
+
+lomiri-app-launch (0.0.90-5) unstable; urgency=medium
+
+  * debian/liblomiri-app-launch0.symbols:
+    + Update symbols using pkgkde-symbolshelper.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Mon, 28 Sep 2020 23:30:31 +0200
+
+lomiri-app-launch (0.0.90-4) unstable; urgency=medium
+
+  * debian/liblomiri-app-launch0.symbols:
+    + Update symbols using pkgkde-symbolshelper.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Wed, 09 Sep 2020 16:48:29 +0200
+
+lomiri-app-launch (0.0.90-3) unstable; urgency=medium
+
+  * debian/liblomiri-app-launch0.symbols:
+    + Update symbols using pkgkde-symbolshelper.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 08 Sep 2020 15:51:06 +0200
+
+lomiri-app-launch (0.0.90-2) unstable; urgency=medium
+
+  * debian/rules:
+    + Include buildflags.mk.
+  * debian/control:
+    + Fix Vcs-*: URLs.
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 14 Jul 2020 01:18:21 +0200
+
+lomiri-app-launch (0.0.90-1) unstable; urgency=medium
+
+  * Initial upload to Debian. (Closes: #953169).
+
+ -- Mike Gabriel <sunweaver@debian.org>  Tue, 19 May 2020 11:23:01 +0200

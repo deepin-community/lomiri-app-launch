@@ -1,0 +1,14 @@
+Description: Add Keywords= key to .desktop file.
+Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Forwarded: https://gitlab.com/ubports/core/lomiri-app-launch/-/merge_requests/12/
+
+--- a/lomiri-app-test/data/lomiri-app-test.desktop.in
++++ b/lomiri-app-test/data/lomiri-app-test.desktop.in
+@@ -5,6 +5,7 @@
+ Type=Application
+ Terminal=false
+ Icon=lomiri-app-test
++Keywords=App;Launch;Test;Shell;
+ X-Ayatana-Appmenu-Show-Stubs=false
+ X-Lomiri-Touch=true
+ X-Lomiri-Single-Instance=true

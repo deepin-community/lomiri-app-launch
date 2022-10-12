@@ -1,0 +1,9 @@
+<version>
+@ABI_VERSION@
+</version>
+<headers>
+/usr/include/liblomiri-app-launch-@API_VERSION@/
+</headers>
+<libs>
+/usr/lib/@LOMIRI_APP_LAUNCH_ARCH@/liblomiri-app-launch.so.@ABI_VERSION@
+</libs>

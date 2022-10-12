@@ -1,0 +1,2 @@
+version=4
+https://gitlab.com/ubports/core/lomiri-app-launch/tags .*/lomiri-app-launch-(\d\S+)\.tar\.gz

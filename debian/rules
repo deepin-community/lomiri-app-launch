@@ -1,0 +1,50 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Get full logs in tests
+export G_MESSAGES_DEBUG=all
+
+# Ensure tests fail with criticals
+#export G_DEBUG=fatal_criticals
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# Uncomment this to be more picky with non-updated .symbols files
+#export DPKG_GENSYMBOLS_CHECK_LEVEL=4
+
+include /usr/share/dpkg/architecture.mk
+
+include /usr/share/dpkg/buildflags.mk
+# see FEATURE AREAS in dpkg-buildflags(1)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export QT_SELECT := 5
+
+undefine DBUS_SESSION_BUS_ADDRESS
+undefine DBUS_SYSTEM_BUS_ADDRESS
+
+%:
+	dh $@ --with gir --with pkgkde_symbolshelper
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+override_dh_installdeb:
+	sed -e"s/#MULTIARCH#/$(DEB_HOST_MULTIARCH)/g" \
+		debian/lomiri-app-launch.postinst.in \
+		> debian/lomiri-app-launch.postinst
+	dh_installdeb
+
+override_dh_auto_test:
+	mkdir -p $(CURDIR)/debian/test-home/.local/share/
+	export HOME=$(CURDIR)/debian/test-home \
+	    && export XDG_DATA_HOME=$(CURDIR)/debian/test-home/.local/share \
+	    && dh_auto_test --no-parallel
+
+override_dh_clean:
+	rm -Rfv $(CURDIR)/debian/test-home/
+	dh_clean
+
+get-orig-source:
+	uscan --noconf --force-download --rename --download-current-version --destdir=..

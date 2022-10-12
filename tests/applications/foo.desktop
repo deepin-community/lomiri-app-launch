@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Foo
+Type=Application
+Exec=foo %U
+NoDisplay=false
+Hidden=false
+Terminal=false
+Icon=/snap/lomiri-package/current/foo.png

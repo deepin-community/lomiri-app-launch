@@ -1,0 +1,15 @@
+Description: It's /usr/bin/sh in Debian bullseye and beyond.
+Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Forwarded: <not-needed>, (weird) Debian-specific change
+
+--- a/tests/jobs-systemd.cpp
++++ b/tests/jobs-systemd.cpp
+@@ -270,7 +270,7 @@
+         units.begin()->environment.find(std::string{"DBUS_SESSION_BUS_ADDRESS="} + getenv("DBUS_SESSION_BUS_ADDRESS")));
+ 
+     /* Ensure the exec is correct */
+-    EXPECT_EQ("/bin/sh", units.begin()->execpath);
++    EXPECT_EQ("/usr/bin/sh", units.begin()->execpath);
+ 
+     /* Try an entirely custom variable */
+     systemd->managerClear();

@@ -1,0 +1,127 @@
+Source: lomiri-app-launch
+Section: gnome
+Priority: optional
+Maintainer: Debian UBports Team <team+ubports@tracker.debian.org>
+Uploaders:
+ Mike Gabriel <sunweaver@debian.org>,
+Build-Depends: abi-compliance-checker,
+               cmake,
+               cmake-extras (>= 1.5-7~),
+               dbus-test-runner,
+               debhelper-compat (= 13),
+               googletest,
+               libcurl4-gnutls-dev,
+               libdbus-1-dev,
+               libdbustest1-dev (>= 14.04.0),
+               libgirepository1.0-dev,
+               libglib2.0-dev,
+               libgtest-dev,
+               libjson-glib-dev (>= 1.1.2),
+               liblttng-ust-dev,
+               libmirclient-dev (>= 0.5),
+               libproperties-cpp-dev,
+               liblomiri-api-dev (>= 0.1.0),
+               libzeitgeist-2.0-dev,
+               gobject-introspection,
+               pkg-kde-tools,
+               python3-dbusmock,
+Standards-Version: 4.6.0
+Rules-Requires-Root: no
+Homepage: http://gitlab.com/ubports/core/lomiri-app-launch
+Vcs-Git: https://salsa.debian.org/ubports-team/lomiri-app-launch.git
+Vcs-Browser: https://salsa.debian.org/ubports-team/lomiri-app-launch/
+
+Package: lomiri-app-launch
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         dbus-user-session,
+         zeitgeist-core,
+Multi-Arch: foreign
+Description: User space daemon for launching applications
+ Application launching system and associated utilities that is used to
+ launch applications in a standard and confined way.
+ .
+ This package provides the Lomiri App Launch user space daemon.
+
+Package: lomiri-app-launch-tools
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         lomiri-app-launch (= ${binary:Version})
+Replaces: upstart-app-launch-tools,
+          ubuntu-app-launch-tools,
+Provides: upstart-app-launch-tools,
+          ubuntu-app-launch-tools,
+Description: Tools for working wtih launched applications
+ Application launching system and associated utilities that is used to
+ launch applications in a standard and confined way.
+ .
+ This package provides tools for working with Lomiri App Launch.
+
+Package: liblomiri-app-launch0
+Section: libs
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         lomiri-app-launch (= ${binary:Version}),
+#         lomiri-pasted,
+Recommends:
+         libertine-xmir-tools [amd64 armhf arm64 i386],
+Pre-Depends: ${misc:Pre-Depends},
+Multi-Arch: same
+Description: library for sending requests to Lomiri App Launch
+ Application launching system and associated utilities that is used to
+ launch applications in a standard and confined way.
+ .
+ This package contains shared libraries to be used by applications.
+
+Package: liblomiri-app-launch-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         gir1.2-lomiriapplaunch-0 (= ${binary:Version}),
+         libglib2.0-dev,
+         libmirclient-dev (>= 0.5),
+         libproperties-cpp-dev,
+         liblomiri-app-launch0 (= ${binary:Version}),
+Pre-Depends: ${misc:Pre-Depends},
+Multi-Arch: same
+Description: library for sending requests to the Lomiri App Launch
+ Application launching system and associated utilities that is used to
+ launch applications in a standard and confined way.
+ .
+ This package contains files that are needed to build applications.
+
+Package: gir1.2-lomiriapplaunch-0
+Section: introspection
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         liblomiri-app-launch0 (= ${binary:Version}),
+         ${gir:Depends},
+Pre-Depends: ${misc:Pre-Depends}
+Recommends: lomiri-app-launch (= ${binary:Version})
+Multi-Arch: same
+Description: typelib file for liblomiri-app-launch4
+ Application launching system and associated utilities that is used to
+ launch applications in a standard and confined way.
+ .
+ Interface for starting apps and getting info on them.
+ .
+ This package can be used by other packages using the GIRepository format to
+ generate dynamic bindings for liblomiri-app-launch0.
+
+Package: lomiri-app-test
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         qtchooser,
+Description: Small application to help test apps
+ Application launching system and associated utilities that is used to
+ launch applications in a standard and confined way.
+ .
+ Uses trusted prompt sessions to provide a way to easily run a command on
+ the command line to look at stdout or stderr for developers.

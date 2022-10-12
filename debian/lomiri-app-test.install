@@ -1,0 +1,4 @@
+usr/share/applications/lomiri-app-test.desktop
+usr/share/lomiri-app-launch/lomiri-app-test.qml
+usr/share/icons/hicolor/scalable/apps/lomiri-app-test.svg
+usr/bin/app-test/* /usr/bin

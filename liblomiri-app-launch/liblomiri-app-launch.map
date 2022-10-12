@@ -1,0 +1,25 @@
+{
+global:
+	lomiri_app_launch_*;
+	extern "C++" {
+		lomiri::app_launch::Registry::[!I]*;
+		typeinfo?for?lomiri::app_launch::Registry;
+		typeinfo?name?for?lomiri::app_launch::Registry;
+		lomiri::app_launch::Application::*;
+		typeinfo?for?lomiri::app_launch::Application;
+		typeinfo?name?for?lomiri::app_launch::Application;
+		lomiri::app_launch::AppID::*;
+		typeinfo?for?lomiri::app_launch::AppID;
+		typeinfo?name?for?lomiri::app_launch::AppID;
+		lomiri::app_launch::Helper::*;
+		typeinfo?for?lomiri::app_launch::Helper;
+		typeinfo?name?for?lomiri::app_launch::Helper;
+		lomiri::app_launch::operator*;
+		lomiri::app_launch::oom::*;
+	};
+local:
+	*;
+	extern "C++" {
+		*;
+	};
+};

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Lomiri App Test
+Comment=A shell used to test applications
+Exec=qmlscene @pkgdatadir@/lomiri-app-test.qml
+Type=Application
+Terminal=false
+Icon=lomiri-app-test
+X-Ayatana-Appmenu-Show-Stubs=false
+X-Lomiri-Touch=true
+X-Lomiri-Single-Instance=true

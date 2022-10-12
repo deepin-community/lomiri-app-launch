@@ -1,0 +1,4 @@
+# upstream sources ship a debian/ folder. These files from upstream's debian/ folder can gently be ignored...
+lomiri-app-launch source: file-without-copyright-information debian/compat
+lomiri-app-launch source: file-without-copyright-information debian/gir1.2-lomiri-app-launch-0.install
+

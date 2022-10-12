@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Single
+Type=Application
+Version=1.0
+Comment=A comment
+Exec=single
+NoDisplay=false
+Hidden=false
+Terminal=false
+Icon=${SNAP}/single.png
+X-Lomiri-Single-Instance=true

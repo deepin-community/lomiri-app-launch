@@ -1,0 +1,35 @@
+Description: Fix LomiriAppLaunch-0.gir API version (was: 3, should be: 0).
+Author: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Forwarded: https://gitlab.com/ubports/core/lomiri-app-launch/-/merge_requests/12/
+
+--- a/liblomiri-app-launch/CMakeLists.txt
++++ b/liblomiri-app-launch/CMakeLists.txt
+@@ -179,20 +179,20 @@
+ 
+ set(INTROSPECTION_GIRS)
+ set(_introspection_files ${LAUNCHER_HEADERS})
+-set(LomiriAppLaunch_3_gir "lomiri-app-launch")
+-set(LomiriAppLaunch_3_gir_INCLUDES GObject-2.0)
++set(LomiriAppLaunch_0_gir "lomiri-app-launch")
++set(LomiriAppLaunch_0_gir_INCLUDES GObject-2.0)
+ 
+ gir_get_cflags(_cflags)
+ list_prefix(MIR_C_INCLUDES MIR_INCLUDE_DIRS "-I")
+-set(LomiriAppLaunch_3_gir_CFLAGS ${c_flags} ${MIR_C_INCLUDES} "-L/usr/local/lib")
+-set(LomiriAppLaunch_3_gir_LIBS lomiri-app-launch)
++set(LomiriAppLaunch_0_gir_CFLAGS ${c_flags} ${MIR_C_INCLUDES} "-L/usr/local/lib")
++set(LomiriAppLaunch_0_gir_LIBS lomiri-app-launch)
+ 
+ list_make_absolute(_abs_introspection_files _introspection_files "${CMAKE_CURRENT_SOURCE_DIR}/")
+-set(LomiriAppLaunch_3_gir_FILES ${_abs_introspection_files})
+-set(LomiriAppLaunch_3_gir_SCANNERFLAGS --c-include "lomiri-app-launch.h")
+-set(LomiriAppLaunch_3_gir_EXPORT_PACKAGES "lomiri-app-launch-${API_VERSION}")
++set(LomiriAppLaunch_0_gir_FILES ${_abs_introspection_files})
++set(LomiriAppLaunch_0_gir_SCANNERFLAGS --c-include "lomiri-app-launch.h")
++set(LomiriAppLaunch_0_gir_EXPORT_PACKAGES "lomiri-app-launch-${API_VERSION}")
+ 
+-list(APPEND INTROSPECTION_GIRS LomiriAppLaunch-3.gir)
++list(APPEND INTROSPECTION_GIRS LomiriAppLaunch-0.gir)
+ gir_add_introspections(INTROSPECTION_GIRS)
+ 
+ add_subdirectory(abi-check)
